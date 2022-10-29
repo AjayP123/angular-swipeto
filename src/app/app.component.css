@@ -1,0 +1,79 @@
+/* .main-content {
+  background-color: #c6c6e0;
+  height: 100%;
+}
+.navbar {
+  background-color: 084d8d;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.navbar-brand {
+  color: white;
+  background-color: #8bbd23;
+  margin-bottom: 10px;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.sub-header1 {
+  font-size: x-large;
+  color: #49499e;
+  padding-bottom: 15px;
+}
+.sub-header2 {
+  font-size: large;
+  color: chocolate;
+}
+.circle-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.circles {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: white;
+  margin: 5px;
+  align-items: center;
+  box-shadow: 4px 4px #7481bd;
+}
+.sports {
+  display: flex;
+}
+.sports_name {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex: auto;
+  word-wrap: break-word;
+  text-align: center;
+  font-weight: bold;
+}
+
+.c-btn {
+  border: none;
+  background-color: #33335c;
+  padding: 12px 48px 12px 24px;
+  border-radius: 4px;
+  color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 24px center;
+}
+.button-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active-click {
+  background-color: #cf9696;
+} */

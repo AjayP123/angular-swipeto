@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-light customs">
+  <a class="navbar-brand" href="#">Login</a>
+</nav>
+<div class="main-content">
+  <div class="header">
+    <div class="sub-header1">What is your favourite sports ?</div>
+    <div class="sub-header2">
+      It helps us to find the personalised experience
+    </div>
+  </div>
+  <div class="circle-holder">
+    <div
+      class="circles"
+      *ngFor="let sport of sports; let i = index"
+      [ngClass]="{ 'active-click': sport.isActive }"
+    >
+      <div class="sports_name" (click)="selectSports(i)">
+        {{ sport.name }}
+      </div>
+    </div>
+  </div>
+  <div class="button-next">
+    <button class="c-btn" (click)="next()">NEXT</button>
+  </div>
+</div>
