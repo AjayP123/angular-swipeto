@@ -1,0 +1,90 @@
+.container {
+  background-color: #c6c6e0;
+}
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  background-color: #49499e;
+  min-height: 40px;
+}
+.nav-content {
+  font-weight: bold;
+  font-size: large;
+  color: chocolate;
+}
+.active {
+  color: white;
+}
+.vl {
+  border-left: 1px solid black;
+  min-height: 40px;
+}
+/* .search {
+  padding: 15px;
+}
+.input-search {
+  border-radius: 15px;
+} */
+
+.container-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 10px;
+}
+
+form.nosubmit {
+  border: none;
+  padding: 0;
+}
+
+form {
+  color: #555;
+  display: flex;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  /* margin: 0 0 30px; */
+}
+
+input[type='search'] {
+  border: none;
+  /* background: transparent; */
+  margin: 0;
+  padding: 7px 8px;
+  font-size: 14px;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  width: 100%;
+}
+
+input[type='search']::placeholder {
+  color: #bbb;
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-height: 85%;
+  overflow-y: scroll;
+}
+.chip {
+  display: inline-block;
+  padding: 0 15px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  margin: 5px;
+}
+.active-chip {
+  background: #6f6fbf;
+  color: white;
+}

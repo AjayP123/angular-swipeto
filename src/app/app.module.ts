@@ -11,7 +11,7 @@ import { TournamentAndTeamsComponent } from './tournamentsandteam/tournaments-te
 import { AppRoutingModule } from './app.routing.module';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { AppService } from './app.service.ts';
+import { AppService } from './app.service';
 
 // @NgModule decorator with its metadata
 @NgModule({

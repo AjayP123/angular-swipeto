@@ -1,1 +1,22 @@
-<h1>Teams</h1>
+<div class="container">
+  <div class="top-nav">
+    <div class="nav-content active">Football</div>
+    <div class="vl"></div>
+    <div class="nav-content in-active">Tennis</div>
+  </div>
+  <div class="container-search">
+    <form class="nosubmit">
+      <input class="nosubmit" type="search" placeholder="Search..." />
+    </form>
+  </div>
+  <div class="chips-container">
+    <div
+      class="chip"
+      (click)="addToActive(index)"
+      [ngClass]="{ 'active-chip': recipient.isActive }"
+      *ngFor="let recipient of classIdsAndNamesMap; let index = index"
+    >
+      {{ recipient.name }}
+    </div>
+  </div>
+</div>

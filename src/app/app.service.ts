@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 })
 export class AppService {
   baseUrl: string =
-    'https://ss-aka-ori.ladbrokes.com/openbet-ssviewer/Drilldown/2.31';
+    'https://ss-aka-ori.ladbrokes.com/openbet-ssviewer/Drilldown/2.31/';
   constructor(public http: HttpClient) {}
   getClassIds() {
     return this.http.get(
