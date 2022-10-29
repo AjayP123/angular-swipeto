@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {} from './../app.service.ts';
+import { AppService } from './../app.service.ts';
 
 @Component({
   selector: 'tournament-teams',
