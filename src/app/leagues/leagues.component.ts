@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppService } from '../app.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'leagues',
@@ -11,7 +12,7 @@ export class LeaguesComponent {
   name = new FormControl('');
   classIdsAndNamesMap: Array<any> = [];
   searchObject: Array<any>;
-  constructor(public appService: AppService) {}
+  constructor(public appService: AppService, private route: Router) {}
 
   ngOnInit() {
     this.appService.getLeagues().subscribe((data: any) => {
@@ -40,5 +41,7 @@ export class LeaguesComponent {
       this.searchObject[index].isActive = false;
     }
   }
-  next() {}
+  next() {
+    this.route.navigateByUrl('/bets');
+  }
 }

@@ -1,5 +1,6 @@
 // imports
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { AppService } from './app.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LeaguesComponent } from './leagues/leagues.component';
+import { BetContainerComponent } from './bet-final.component';
 
 // @NgModule decorator with its metadata
 @NgModule({
@@ -23,9 +25,11 @@ import { LeaguesComponent } from './leagues/leagues.component';
     TournamentAndTeamsComponent,
     HomeComponent,
     LeaguesComponent,
+    BetContainerComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     RouterModule,
