@@ -42,6 +42,8 @@ export class BetContainerComponent {
   animationState: string;
   bindingObject: any = {};
   selectedOdd;
+  placedBet: boolean = false;
+  addedtobetslip: boolean = false;
   oddsHeader: any = ['Home', 'Draw', 'Away'];
 
   constructor(public appService: AppService) {
@@ -87,6 +89,11 @@ export class BetContainerComponent {
     console.log(state);
     if (!this.animationState) {
       this.animationState = state;
+    }
+    if (state == 'slideOutRight') {
+      this.placedBet = true;
+    } else if (state == 'slideOutLeft') {
+      this.addedtobetslip = true;
     }
   }
 

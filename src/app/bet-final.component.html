@@ -1,5 +1,6 @@
 <div class="container">
   <div
+    *ngIf="!placedBet && !addedtobetslip"
     class="example-card animated flip infinite custom"
     style="margin: 20px 0px;"
     [@cardAnimator]="animationState"
@@ -28,5 +29,20 @@
         </div>
       </div>
     </div>
+    <div class="stake">
+      <div class="form-group">
+        <div class="label">Stake</div>
+        <div class="input-group">
+          <input
+            type="text"
+            id="myNumber"
+            class="form-control input-number"
+            value="1"
+          />
+        </div>
+      </div>
+    </div>
   </div>
+  <div *ngIf="placedBet" class="custom">Bet placed successfully</div>
+  <div *ngIf="addedtobetslip" class="custom">Bet Added to Betslip</div>
 </div>
