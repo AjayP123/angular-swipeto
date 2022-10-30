@@ -1,0 +1,106 @@
+.container {
+  background-color: #c6c6e0;
+  height: 100%;
+}
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  background-color: #49499e;
+  min-height: 40px;
+}
+.nav-content {
+  font-weight: bold;
+  font-size: large;
+  color: chocolate;
+}
+.active {
+  color: white;
+}
+.vl {
+  border-left: 1px solid black;
+  min-height: 40px;
+}
+/* .search {
+  padding: 15px;
+}
+.input-search {
+  border-radius: 15px;
+} */
+
+.container-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 10px;
+}
+
+form.nosubmit {
+  border: none;
+  padding: 0;
+}
+
+form {
+  color: #555;
+  display: flex;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  /* margin: 0 0 30px; */
+}
+
+input[type='search'] {
+  border: none;
+  /* background: transparent; */
+  margin: 0;
+  padding: 7px 8px;
+  font-size: 14px;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  width: 100%;
+}
+
+input[type='search']::placeholder {
+  color: #bbb;
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-height: calc(100% - 120px);
+  overflow-y: scroll;
+}
+.chip {
+  display: inline-block;
+  padding: 0 15px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  margin: 5px;
+}
+.active-chip {
+  background: #6f6fbf;
+  color: white;
+}
+.c-btn {
+  border: none;
+  background-color: #33335c;
+  padding: 12px 48px 12px 24px;
+  border-radius: 25px;
+  color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 24px center;
+}
+.button-next {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}

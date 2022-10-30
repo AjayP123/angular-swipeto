@@ -1,22 +1,21 @@
 import { Component } from '@angular/core';
 import { AppService } from '../app.service';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'tournament-teams',
-  templateUrl: './tournaments-teams.component.html',
-  styleUrls: ['./tournaments-teams.component.css'],
+  selector: 'leagues',
+  templateUrl: './leagues.component.html',
+  styleUrls: ['./leagues.component.css'],
 })
-export class TournamentAndTeamsComponent {
+export class LeaguesComponent {
   name = new FormControl('');
   classIdsAndNamesMap: Array<any> = [];
   searchObject: Array<any>;
-  constructor(public appService: AppService, private route: Router) {}
+  constructor(public appService: AppService) {}
 
   ngOnInit() {
-    this.appService.getClassIds().subscribe((data: any) => {
-      this.dataMapper(data.SSResponse.children);
+    this.appService.getLeagues().subscribe((data: any) => {
+      this.dataMapper(data.SSResponse.children[0].class.children);
     });
     this.name.valueChanges.subscribe((data) => {
       this.searchObject = this.classIdsAndNamesMap.filter((datafilter) => {
@@ -27,8 +26,8 @@ export class TournamentAndTeamsComponent {
   dataMapper(d) {
     d.forEach((object) => {
       this.classIdsAndNamesMap.push({
-        name: object?.class?.name,
-        id: object?.class?.id,
+        name: object?.type?.name,
+        id: object?.type?.id,
       });
     });
     this.searchObject = this.classIdsAndNamesMap;
@@ -41,7 +40,5 @@ export class TournamentAndTeamsComponent {
       this.searchObject[index].isActive = false;
     }
   }
-  next() {
-    this.route.navigateByUrl('/leagues');
-  }
+  next() {}
 }

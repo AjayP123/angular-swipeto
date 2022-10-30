@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { AppService } from './app.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LeaguesComponent } from './leagues/leagues.component';
 
 // @NgModule decorator with its metadata
 @NgModule({
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ItemDirective,
     TournamentAndTeamsComponent,
     HomeComponent,
+    LeaguesComponent,
   ],
   imports: [
     BrowserModule,

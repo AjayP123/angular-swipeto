@@ -15,4 +15,10 @@ export class AppService {
         'Class?translationLang=en&responseFormat=json&simpleFilter=class.categoryId:equals:16&simpleFilter=class.isActive&simpleFilter=class.siteChannels:contains:M&simpleFilter=class.hasOpenEvent'
     );
   }
+  getLeagues() {
+    return this.http.get(
+      this.baseUrl +
+        '/ClassToSubTypeForClass/97?translationLang=en&responseFormat=json&simpleFilter=type.hasOpenEvent:isTrue'
+    );
+  }
 }
