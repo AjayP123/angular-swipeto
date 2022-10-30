@@ -41,7 +41,11 @@ export const slideOutUp = [
 export class BetContainerComponent {
   animationState: string;
 
-  constructor(public appService: AppService) {}
+  constructor(public appService: AppService) {
+    this.appService.getMostSuitableBet().subscribe((data) => {
+      console.log(data);
+    });
+  }
 
   startAnimation(state) {
     console.log(state);
