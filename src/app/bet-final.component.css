@@ -4,7 +4,19 @@
   display: flex;
   padding: 25px;
 } */
-
+.container {
+  background-color: #c6c6e0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom {
+  width: 300px;
+  box-shadow: 0 0 10px;
+  background: white;
+  padding: 15px;
+}
 .bet-container {
   display: flex;
   align-content: center;
@@ -12,10 +24,14 @@
 }
 .odds-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
   margin: 5px;
+}
+.odds {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 .odds-button {
   border: 1px solid #dbdbdb;
@@ -40,5 +56,35 @@
 
 .odd-style {
   font-size: medium;
+  font-weight: bold;
+}
+
+.active-odd {
+  background-color: #096403;
+  color: white;
+}
+
+.league {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.teamNames {
+  padding: 15px 15px 5px 15px;
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  border-bottom-style: dashed;
+  /* border: 2px dotted black; */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.market {
+  margin-bottom: 12px;
+  font-size: medium;
+  text-align: center;
   font-weight: bold;
 }

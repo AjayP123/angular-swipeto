@@ -1,34 +1,31 @@
-<div class="bet-container">
+<div class="container">
   <div
-    class="example-card animated flip infinite"
+    class="example-card animated flip infinite custom"
     style="margin: 20px 0px;"
     [@cardAnimator]="animationState"
     (@cardAnimator.done)="resetAnimationState()"
     (swipeleft)="startAnimation('slideOutLeft')"
     (swiperight)="startAnimation('slideOutRight')"
   >
-    <div class="teamNames">
-      {{ bindingObject.teamNames }}
+    <div class="teamNames">{{ bindingObject.teamNames }}</div>
+    <div class="league">
+      <div>{{ bindingObject.league }}</div>
+      <div>{{ bindingObject.categoryName }}</div>
     </div>
-    <div class="dateTime">Start Time : {{ bindingObject.startTime }}</div>
+    <!-- <div class="dateTime">Start Time : {{ bindingObject.startTime }}</div> -->
     <div class="odds-container">
+      <div class="market">{{ bindingObject.marketName }}</div>
       <div class="odds">
-        <button class="odds-button">
-          <span class="span-style">Home</span>
-          <span class="odd-style">{{ bindingObject.home }}</span>
-        </button>
-      </div>
-      <div class="odds">
-        <button class="odds-button">
-          <span class="span-style">Draw</span>
-          <span class="odd-style">{{ bindingObject.draw }}</span>
-        </button>
-      </div>
-      <div class="odds">
-        <button class="odds-button">
-          <span class="span-style">Away</span>
-          <span class="odd-style">{{ bindingObject.away }}</span>
-        </button>
+        <div *ngFor="let header of oddsHeader">
+          <button
+            class="odds-button"
+            [ngClass]="{ 'active-odd': header == selectedOdd }"
+            (click)="selectOdd(header)"
+          >
+            <span class="span-style">{{ header }}</span>
+            <span class="odd-style">{{ bindingObject[header] }}</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

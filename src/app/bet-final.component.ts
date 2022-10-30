@@ -41,6 +41,8 @@ export const slideOutUp = [
 export class BetContainerComponent {
   animationState: string;
   bindingObject: any = {};
+  selectedOdd;
+  oddsHeader: any = ['Home', 'Draw', 'Away'];
 
   constructor(public appService: AppService) {
     this.appService.getMostSuitableBet().subscribe((data: any) => {
@@ -57,24 +59,28 @@ export class BetContainerComponent {
       eventData.children[0].market.templateMarketName;
     eventData.children[0].market.children.forEach((data) => {
       if (data.outcome.outcomeMeaningMinorCode === 'A') {
-        this.bindingObject.away =
+        this.bindingObject.Away =
           data.outcome.children[0].price.priceNum +
           '/' +
           data.outcome.children[0].price.priceDen;
       }
       if (data.outcome.outcomeMeaningMinorCode === 'D') {
-        this.bindingObject.draw =
+        this.bindingObject.Draw =
           data.outcome.children[0].price.priceNum +
           '/' +
           data.outcome.children[0].price.priceDen;
       }
       if (data.outcome.outcomeMeaningMinorCode === 'H') {
-        this.bindingObject.home =
+        this.bindingObject.Home =
           data.outcome.children[0].price.priceNum +
           '/' +
           data.outcome.children[0].price.priceDen;
       }
     });
+  }
+
+  selectOdd(header) {
+    this.selectedOdd = header;
   }
 
   startAnimation(state) {
