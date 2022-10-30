@@ -6,7 +6,7 @@ import * as kf from './keyframes';
 @Component({
   selector: 'bet-container',
   templateUrl: './bet-final.component.html',
-  styleUrls: ['./bet-fina.component.css'],
+  styleUrls: ['./bet-final.component.css'],
   animations: [
     trigger('cardAnimator', [
       transition(
