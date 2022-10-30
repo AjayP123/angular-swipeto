@@ -21,4 +21,6 @@ export class AppService {
         '/ClassToSubTypeForClass/97?translationLang=en&responseFormat=json&simpleFilter=type.hasOpenEvent:isTrue'
     );
   }
+
+  getMostSuitableBet() {}
 }

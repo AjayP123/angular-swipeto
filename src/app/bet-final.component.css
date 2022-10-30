@@ -1,0 +1,6 @@
+.poc {
+  min-height: 35px;
+  min-width: 40px;
+  display: flex;
+  padding: 25px;
+}

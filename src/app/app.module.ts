@@ -1,5 +1,5 @@
 // imports
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +16,17 @@ import { AppService } from './app.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LeaguesComponent } from './leagues/leagues.component';
 import { BetContainerComponent } from './bet-final.component';
+import * as Hammer from 'hammerjs';
+import {
+  HammerGestureConfig,
+  HAMMER_GESTURE_CONFIG,
+} from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig {
+  override overrides = <any>{
+    swipe: { direction: Hammer.DIRECTION_ALL },
+  };
+}
 
 // @NgModule decorator with its metadata
 @NgModule({
@@ -25,7 +36,7 @@ import { BetContainerComponent } from './bet-final.component';
     TournamentAndTeamsComponent,
     HomeComponent,
     LeaguesComponent,
-    BetContainerComponent
+    BetContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,8 +47,15 @@ import { BetContainerComponent } from './bet-final.component';
     AppRoutingModule,
     CommonModule,
     ReactiveFormsModule,
+    HammerModule,
   ],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
