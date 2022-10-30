@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppService } from '../app.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'tournament-teams',
@@ -7,12 +8,19 @@ import { AppService } from '../app.service';
   styleUrls: ['./tournaments-teams.component.css'],
 })
 export class TournamentAndTeamsComponent {
+  name = new FormControl('');
   classIdsAndNamesMap: Array<any> = [];
+  searchObject: Array<any>;
   constructor(public appService: AppService) {}
 
   ngOnInit() {
     this.appService.getClassIds().subscribe((data: any) => {
       this.dataMapper(data.SSResponse.children);
+    });
+    this.name.valueChanges.subscribe((data) => {
+      this.searchObject = this.classIdsAndNamesMap.filter((datafilter) => {
+        return datafilter?.name?.includes(data);
+      });
     });
   }
   dataMapper(d) {
@@ -22,13 +30,15 @@ export class TournamentAndTeamsComponent {
         id: object?.class?.id,
       });
     });
+    this.searchObject = this.classIdsAndNamesMap;
     console.log(this.classIdsAndNamesMap);
   }
   addToActive(index) {
-    if (!this.classIdsAndNamesMap[index].isActive) {
-      this.classIdsAndNamesMap[index].isActive = true;
+    if (!this.searchObject[index].isActive) {
+      this.searchObject[index].isActive = true;
     } else {
-      this.classIdsAndNamesMap[index].isActive = false;
+      this.searchObject[index].isActive = false;
     }
   }
+  next() {}
 }

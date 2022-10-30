@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { AppService } from './app.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // @NgModule decorator with its metadata
 @NgModule({
@@ -28,6 +29,7 @@ import { AppService } from './app.service';
     RouterModule,
     AppRoutingModule,
     CommonModule,
+    ReactiveFormsModule,
   ],
   providers: [AppService],
   bootstrap: [AppComponent],
