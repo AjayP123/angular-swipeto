@@ -1,6 +1,44 @@
-.poc {
+/* .poc {
   min-height: 35px;
   min-width: 40px;
   display: flex;
   padding: 25px;
+} */
+
+.bet-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.odds-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px;
+}
+.odds-button {
+  border: 1px solid #dbdbdb;
+  color: #2b2b2b;
+  font-family: Roboto Condensed;
+  line-height: 14px;
+  border-radius: 2px;
+  outline: 0;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  flex-direction: column;
+}
+.span-style {
+  font-size: small;
+  margin-bottom: 5px;
+}
+
+.odd-style {
+  font-size: medium;
+  font-weight: bold;
 }

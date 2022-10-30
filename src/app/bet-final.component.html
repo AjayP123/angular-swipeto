@@ -6,6 +6,30 @@
     (@cardAnimator.done)="resetAnimationState()"
     (swipeleft)="startAnimation('slideOutLeft')"
     (swiperight)="startAnimation('slideOutRight')"
-  ></div>
+  >
+    <div class="teamNames">
+      {{ bindingObject.teamNames }}
+    </div>
+    <div class="dateTime">Start Time : {{ bindingObject.startTime }}</div>
+    <div class="odds-container">
+      <div class="odds">
+        <button class="odds-button">
+          <span class="span-style">Home</span>
+          <span class="odd-style">{{ bindingObject.home }}</span>
+        </button>
+      </div>
+      <div class="odds">
+        <button class="odds-button">
+          <span class="span-style">Draw</span>
+          <span class="odd-style">{{ bindingObject.draw }}</span>
+        </button>
+      </div>
+      <div class="odds">
+        <button class="odds-button">
+          <span class="span-style">Away</span>
+          <span class="odd-style">{{ bindingObject.away }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
-<button (click)="startAnimation('slideOutLeft')">test</button>

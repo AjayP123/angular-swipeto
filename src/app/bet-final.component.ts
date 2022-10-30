@@ -40,10 +40,40 @@ export const slideOutUp = [
 })
 export class BetContainerComponent {
   animationState: string;
+  bindingObject: any = {};
 
   constructor(public appService: AppService) {
-    this.appService.getMostSuitableBet().subscribe((data) => {
-      console.log(data);
+    this.appService.getMostSuitableBet().subscribe((data: any) => {
+      this.pickTheBet(data.SSResponse.children[0].event);
+    });
+  }
+
+  pickTheBet(eventData) {
+    this.bindingObject.teamNames = eventData.name;
+    this.bindingObject.startTime = eventData.startTime;
+    this.bindingObject.categoryName = eventData.categoryName;
+    this.bindingObject.league = eventData.typeName;
+    this.bindingObject.marketName =
+      eventData.children[0].market.templateMarketName;
+    eventData.children[0].market.children.forEach((data) => {
+      if (data.outcome.outcomeMeaningMinorCode === 'A') {
+        this.bindingObject.away =
+          data.outcome.children[0].price.priceNum +
+          '/' +
+          data.outcome.children[0].price.priceDen;
+      }
+      if (data.outcome.outcomeMeaningMinorCode === 'D') {
+        this.bindingObject.draw =
+          data.outcome.children[0].price.priceNum +
+          '/' +
+          data.outcome.children[0].price.priceDen;
+      }
+      if (data.outcome.outcomeMeaningMinorCode === 'H') {
+        this.bindingObject.home =
+          data.outcome.children[0].price.priceNum +
+          '/' +
+          data.outcome.children[0].price.priceDen;
+      }
     });
   }
 
