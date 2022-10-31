@@ -3,7 +3,7 @@
   height: 100%;
 }
 .navbar {
-  background-color: 084d8d;
+  background-color: #084d8d;
   display: flex;
   flex-direction: row-reverse;
 }
